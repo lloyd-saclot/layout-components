@@ -1,13 +1,17 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import ListFruits from '../components/listFruits';
+import { useRouter } from 'expo-router';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Welcome to the App!</Text>
       <Button title="Click Me" onPress={() => alert('Button Pressed!')} />
-        <ListFruits />
+      <ListFruits />
+      <Button title="Go to Lab 3" onPress={() => router.push('/lab3')} />
     </View>
   );
 }
